@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/category/category_item.dart';
 import 'package:news_app/category/category_model.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class CategoryGrid extends StatelessWidget {
+  CategoryGrid({required this.onModelSelected});
+  final void Function(CategoryModel) onModelSelected;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -13,7 +16,7 @@ class CategoryGrid extends StatelessWidget {
         Padding(
           padding: const EdgeInsetsDirectional.symmetric(vertical: 24),
           child: Text(
-            'Pick your category of interest',
+            AppLocalizations.of(context)!.pickyourcategoryinterest,
             style: Theme.of(context).textTheme.bodySmall,
           ),
         ),
@@ -25,10 +28,16 @@ class CategoryGrid extends StatelessWidget {
                 mainAxisSpacing: 24,
                 crossAxisSpacing: 24
               ),
-              itemBuilder: (_, index) => CategoryItem(
+              itemBuilder: (_, index) =>
+                  InkWell(
+                    onTap: (){
+                      onModelSelected(CategoryModel.categories[index]);
+                  },
+                    child: CategoryItem(
                 category: CategoryModel.categories[index],
                 index:index,
               ),
+                  ),
             itemCount: CategoryModel.categories.length,
           ),
         )
