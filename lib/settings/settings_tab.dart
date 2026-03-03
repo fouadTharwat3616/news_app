@@ -18,13 +18,13 @@ class _SettingsTabState extends State<SettingsTab> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          margin: EdgeInsetsDirectional.only(start: 30,top: 30),
+          margin: EdgeInsetsDirectional.only(start: MediaQuery.of(context).size.width*.05,top: MediaQuery.of(context).size.height*.03),
           child: Text(
             'Language',
             style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                fontSize: 14,
+                fontSize: 20,
                 fontWeight: FontWeight.bold,
-                color: AppTheme.whiteColor
+                color: AppTheme.navyColor
             ),
           ),
         ),

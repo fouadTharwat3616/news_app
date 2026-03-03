@@ -9,19 +9,19 @@ class TabItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.all(8),
-      padding: const EdgeInsets.all(8),
+      margin:  EdgeInsets.all(MediaQuery.of(context).size.width*.02),
+      //padding:  EdgeInsets.all(MediaQuery.of(context).size.height*.01),
       decoration: BoxDecoration(
         color: isSelected ? AppTheme.primaryColor: Colors.transparent,
         borderRadius: BorderRadius.circular(20)
       ),
       child: Container(
-        padding: EdgeInsets.all(7),
+        padding: EdgeInsets.all(MediaQuery.of(context).size.height*.01),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
           border: Border.all(
             color: isSelected ?Colors.transparent : AppTheme.primaryColor,
-            width: 2
+            width: 3
           )
         ),
         child: Text(

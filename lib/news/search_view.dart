@@ -27,9 +27,9 @@ class SearchView extends SearchDelegate {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return Center(child: CircularProgressIndicator(color: AppTheme.primaryColor));
           } else if (snapshot.hasError) {
-            return Center(child: Text('Something went wrong!'));
+            return const Center(child: Text('Something went wrong!'));
           } else if (snapshot.data?.status != 'ok') {
-            return Center(child: Text('Try again!'));
+            return const Center(child: Text('Try again!'));
           }
           final news = snapshot.data?.news ?? [];
           return ListView.builder(
