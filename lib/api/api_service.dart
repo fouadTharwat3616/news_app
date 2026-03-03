@@ -33,7 +33,7 @@ class APIService{
          ApiConstants.newsEndpoint,
        {
          'apiKey' : ApiConstants.apiKey,
-         'sources':sourceId
+         'sources':sourceId,
        }
      );
      final Response = await http.get(uri);

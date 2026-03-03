@@ -9,24 +9,24 @@ class CategoryGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsetsDirectional.symmetric(horizontal: 24),
+      padding:  EdgeInsetsDirectional.symmetric(horizontal: MediaQuery.of(context).size.width*.07),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
         Padding(
-          padding: const EdgeInsetsDirectional.symmetric(vertical: 24),
+          padding:  EdgeInsetsDirectional.symmetric(vertical:MediaQuery.of(context).size.height*.03),
           child: Text(
             AppLocalizations.of(context)!.pickyourcategoryinterest,
             style: Theme.of(context).textTheme.bodySmall,
           ),
         ),
-        const SizedBox(height: 20,),
+          SizedBox(height:MediaQuery.of(context).size.height*.02,),
         Expanded(
           child: GridView.builder(
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              gridDelegate:  SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
-                mainAxisSpacing: 24,
-                crossAxisSpacing: 24
+                mainAxisSpacing: MediaQuery.of(context).size.height*.04,
+                crossAxisSpacing: MediaQuery.of(context).size.width*.05
               ),
               itemBuilder: (_, index) =>
                   InkWell(

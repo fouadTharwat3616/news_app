@@ -19,7 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
+      decoration:  BoxDecoration(
         color: AppTheme.whiteColor,
         image: const DecorationImage(
           image: AssetImage('assets/images/pattern.png'),
@@ -36,7 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
                showSearch(context: context, delegate: SearchView());
               },
               child: Padding(
-                padding: EdgeInsets.all(10),
+                padding:  EdgeInsets.all(MediaQuery.of(context).size.width*.01),
                 child: Icon(
                   Icons.search,
                   color: AppTheme.whiteColor,

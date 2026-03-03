@@ -27,13 +27,14 @@ class _SourcesTabsState extends State<SourcesTabs> {
               }),
               tabs:widget.source.map((sourceItem) => TabItem(
                 source: sourceItem,
-                isSelected: selectedIndex== widget.source.indexOf(sourceItem),
+                isSelected: selectedIndex==widget.source.indexOf(sourceItem),
               )
               ).toList()
           ),
         ),
         Expanded(
-            child: NewsList(sourceId:  widget.source[selectedIndex].id ??''
+            child: NewsList(
+                sourceId:  widget.source[selectedIndex].id ??'',
             )
         )
       ],

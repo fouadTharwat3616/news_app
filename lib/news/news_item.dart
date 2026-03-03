@@ -19,7 +19,7 @@ final News news;
         );
       },
       child: Container(
-        padding: EdgeInsets.all(16),
+        padding: EdgeInsets.all(MediaQuery.of(context).size.width*.03),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -36,21 +36,21 @@ final News news;
                 ),
               ),
             ),
-            const SizedBox(height: 5,),
+             SizedBox(height:MediaQuery.of(context).size.width*.02,),
             Text(
                 news.source?.name ?? '',
               style: Theme.of(context).textTheme.titleMedium?.copyWith(
                   color: AppTheme.lightNavy,
-                fontSize: 10,
+                fontSize: 13,
                 fontWeight: FontWeight.w400
               )
             ),
-            const SizedBox(height: 5,),
+             SizedBox(height:MediaQuery.of(context).size.width*.02,),
             Text(
               news.title ?? '',
               style: Theme.of(context).textTheme.titleMedium
             ),
-            const SizedBox(height: 5,),
+             SizedBox(height:MediaQuery.of(context).size.width*.02,),
             Align(
               alignment: Alignment.centerRight,
               child: Text(

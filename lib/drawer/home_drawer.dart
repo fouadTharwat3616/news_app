@@ -27,11 +27,11 @@ class HomeDrawer extends StatelessWidget {
           ),
           Expanded(
             child: Container(
-              padding: const EdgeInsetsDirectional.only(start: 12),
+              padding:  EdgeInsetsDirectional.only(start: MediaQuery.of(context).size.width*.03),
               color: AppTheme.whiteColor,
               child: Column(
                 children: [
-                  const SizedBox(height: 12,),
+                  SizedBox(height:MediaQuery.of(context).size.height*.01,),
                   InkWell(
                     onTap: (){
                       onItemSelected(DrawerItem.categories);
@@ -39,7 +39,7 @@ class HomeDrawer extends StatelessWidget {
                     child: Row(
                       children: [
                         const Icon(Icons.menu),
-                        const SizedBox(width: 8,),
+                        SizedBox(width: MediaQuery.of(context).size.width*.02,),
                         Text(
                             'Categories',
                           style: Theme.of(context).textTheme.bodyLarge,
@@ -47,7 +47,7 @@ class HomeDrawer extends StatelessWidget {
                       ],
                     ),
                   ),
-                  const SizedBox(height: 12,),
+                  SizedBox(height:MediaQuery.of(context).size.height*.02,),
                   InkWell(
                     onTap: (){
                       onItemSelected(DrawerItem.settings);
@@ -55,7 +55,7 @@ class HomeDrawer extends StatelessWidget {
                     child: Row(
                       children: [
                         const Icon(Icons.settings),
-                        const SizedBox(width: 8,),
+                        SizedBox(width: MediaQuery.of(context).size.width*.02,),
                         Text(
                           'Settings',
                           style: Theme.of(context).textTheme.bodyLarge,
